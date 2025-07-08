@@ -1,9 +1,11 @@
 import json
 import uvicorn
-from fastapi import FastAPI, Query
+import requests
+from fastapi import FastAPI, Query, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from typing import List, Optional
+from wiki.search_parser import parse_wiki_search_results
 
 app = FastAPI()
 
@@ -42,6 +44,19 @@ async def get_landmark_by_id(landmark_id: int, source: str = Query("zth", descri
         if landmark["id"] == landmark_id:
             return landmark
     return {"error": "Landmark not found"}
+
+@app.get("/api/wiki_search")
+async def search_wiki(query: str = Query(..., description="Search query for RIA Wiki")):
+    WIKI_SEARCH_URL = f"https://wiki.ria.red/index.php?search={query}&title=%E7%89%B9%E6%AE%8A:%E6%90%9C%E7%B4%A2&go=%E5%89%8D%E5%BE%80"
+    try:
+        response = requests.get(WIKI_SEARCH_URL)
+        response.raise_for_status()  # Raise an HTTPError for bad responses (4xx or 5xx)
+        search_results = parse_wiki_search_results(response.text)
+        return search_results
+    except requests.exceptions.RequestException as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching wiki search results: {e}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error parsing wiki search results: {e}")
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
