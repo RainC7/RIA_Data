@@ -1,15 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     const landmarksTable = document.getElementById('landmarksTable').getElementsByTagName('tbody')[0];
     const searchInput = document.getElementById('searchInput');
+    const dataSourceSelect = document.getElementById('dataSourceSelect');
     let landmarksData = [];
 
-    fetch('/api/landmarks')
-        .then(response => response.json())
-        .then(data => {
-            landmarksData = data;
-            renderTable(landmarksData);
-        })
-        .catch(error => console.error('Error loading landmark data:', error));
+    function fetchData() {
+        const selectedSource = dataSourceSelect.value;
+        const searchTerm = searchInput.value.toLowerCase();
+        fetch(`/api/landmarks?source=${selectedSource}&name=${searchTerm}`)
+            .then(response => response.json())
+            .then(data => {
+                landmarksData = data;
+                renderTable(landmarksData);
+            })
+            .catch(error => console.error('Error loading landmark data:', error));
+    }
+
+    fetchData(); // Initial data load
 
     function renderTable(data) {
         landmarksTable.innerHTML = '';
@@ -23,13 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    searchInput.addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase();
-        fetch(`/api/landmarks?name=${searchTerm}`)
-            .then(response => response.json())
-            .then(data => {
-                renderTable(data);
-            })
-            .catch(error => console.error('Error searching landmark data:', error));
-    });
+    searchInput.addEventListener('input', fetchData);
+    dataSourceSelect.addEventListener('change', fetchData);
 });
