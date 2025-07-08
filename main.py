@@ -7,7 +7,7 @@ from fastapi.responses import FileResponse
 from typing import List, Optional
 from wiki.search_parser import parse_wiki_search_results
 
-app = FastAPI()
+app = FastAPI(title="RIA_Data")
 
 # Mount the static directory to serve frontend files
 app.mount("/static", StaticFiles(directory="static"), name="static")
