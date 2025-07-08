@@ -84,7 +84,7 @@ def save_landmarks_data():
     landmarks_data = parse_landmarks_to_json(WIKI_URL, COORDINATES_URL)
     
     # 创建保存目录
-    output_dir = "./data"
+    output_dir = "./data/landmark"
     os.makedirs(output_dir, exist_ok=True)
     
     # 保存到JSON文件
