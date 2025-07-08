@@ -26,7 +26,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run script to fetch data
-        run: python landmark/zth.py
+        run: |
+          python landmark/zth.py
+          python landmark/houtu.py
 
       - name: Configure Git
         run: |
@@ -35,5 +37,5 @@ jobs:
 
       - name: Commit and push if data changed
         run: |
-          git add data/zth.json
+          git add data/zth.json data/landmark/houtu.json
           git diff --staged --quiet || (git commit -m "Update landmark data" && git push)
