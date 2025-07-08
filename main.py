@@ -1,5 +1,5 @@
-
 import json
+import uvicorn
 from fastapi import FastAPI, Query
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
@@ -36,3 +36,6 @@ async def get_landmark_by_id(landmark_id: int):
         if landmark["id"] == landmark_id:
             return landmark
     return {"error": "Landmark not found"}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
