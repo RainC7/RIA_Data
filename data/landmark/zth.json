@@ -2957,5 +2957,16 @@
             "y": "Unknown",
             "z": "Unknown"
         }
+    },
+    {
+        "id": 270,
+        "name": "染华港",
+        "grade": "准级",
+        "status": "Normal",
+        "coordinates": {
+            "x": 10601.0,
+            "y": 68.0,
+            "z": 8126.0
+        }
     }
 ]
