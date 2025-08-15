@@ -66,6 +66,17 @@
         }
     },
     {
+        "id": "E-02",
+        "name": "滨海白杉屿",
+        "grade": "白级",
+        "status": "Normal",
+        "coordinates": {
+            "x": "Unknown",
+            "y": "Unknown",
+            "z": "Unknown"
+        }
+    },
+    {
         "id": "ES-01",
         "name": "陇辰·玉鸾港",
         "grade": "白级",
@@ -118,6 +129,17 @@
             "x": -2399.0,
             "y": 74.0,
             "z": 4138.0
+        }
+    },
+    {
+        "id": "WS-02",
+        "name": "垕宵城",
+        "grade": "白级",
+        "status": "Normal",
+        "coordinates": {
+            "x": -6322.0,
+            "y": 126.0,
+            "z": 5849.0
         }
     },
     {
