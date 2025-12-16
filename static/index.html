@@ -3,36 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>莉亚格式化数据服务</title>
+    <title>莉亚统一数据开放共享平台</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>莉亚格式化数据服务</h1>
-        <div class="search-container">
-            <select id="dataSourceSelect">
-                <option value="zth">ZTH 数据</option>
-                <option value="houtu">后土数据</option>
-            </select>
-            <input type="text" id="searchInput" placeholder="搜索地标名称...">
+    <header class="hero">
+        <div class="container hero-content">
+            <div>
+                <p class="eyebrow">LIA Unified Data Platform</p>
+                <h1>莉亚统一数据开放共享平台</h1>
+                <p class="hero-subtitle">
+                    聚合零洲与后土世界的核心数据集，提供稳定可扩展的 API，为创作者、研究者和玩家解锁更多可能。
+                </p>
+                <div class="hero-actions">
+                    <a class="btn primary" href="#explore">立即探索数据</a>
+                    <a class="btn secondary" href="#api">查看 API 速览</a>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <p class="panel-title">今日概览</p>
+                <div class="panel-stat">
+                    <span class="label">可用数据集</span>
+                    <span class="value">2</span>
+                </div>
+                <div class="panel-stat">
+                    <span class="label">自动同步</span>
+                    <span class="value accent">GitHub Actions</span>
+                </div>
+                <div class="panel-foot">数据每 7 天刷新，可通过 webhook 获取更新推送。</div>
+            </div>
         </div>
-        <div class="table-container">
-            <table id="landmarksTable">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>名称</th>
-                        <th>等级</th>
-                        <th>状态</th>
-                        <th>坐标 (X, Y, Z)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Data will be loaded here by JavaScript -->
-                </tbody>
-            </table>
+    </header>
+
+    <main class="container page-grid" id="explore">
+        <section class="left-column">
+            <section class="card platform-card">
+                <h2>为什么选择统一数据平台？</h2>
+                <p>我们通过统一的 Schema、周期性的抓取任务和自动化校验，确保地标与 wiki 数据始终可靠。未来还将开放更多公共数据域，支持自助上传与订阅。</p>
+                <ul class="feature-list">
+                    <li>🛰️ GitHub Actions 保障定期更新</li>
+                    <li>📦 JSON API 即调即用</li>
+                    <li>🧭 支持多数据源融合</li>
+                </ul>
+            </section>
+
+            <section class="card dataset-card-section">
+                <div class="section-header">
+                    <h2>核心数据集</h2>
+                    <span class="section-hint">点击卡片即可切换数据</span>
+                </div>
+                <div class="dataset-grid">
+                    <article class="dataset-card" data-source="zth">
+                        <div class="dataset-card-header">
+                            <span class="badge badge-green">零洲 ZTH</span>
+                            <div class="dataset-count-wrapper">
+                                <span class="dataset-count"><span data-count-type="landmark" data-count-server="zth">--</span> 个地标</span>
+                                <span class="dataset-count secondary">站点 <span data-count-type="railway" data-count-server="zth">--</span></span>
+                            </div>
+                        </div>
+                        <h3>ZTH 共鸣与铁路</h3>
+                        <p>覆盖零洲大陆共鸣地标与铁路实验线网，适配创作者常用的定位规范。</p>
+                        <div class="dataset-meta">
+                            <span>坐标精度：卫星标注</span>
+                            <span>更新：GitHub Actions</span>
+                        </div>
+                    </article>
+                    <article class="dataset-card" data-source="naraku">
+                        <div class="dataset-card-header">
+                            <span class="badge badge-purple">奈落 Naraku</span>
+                            <div class="dataset-count-wrapper">
+                                <span class="dataset-count"><span data-count-type="landmark" data-count-server="naraku">--</span> 个地标</span>
+                                <span class="dataset-count secondary">站点 <span data-count-type="railway" data-count-server="naraku">--</span></span>
+                            </div>
+                        </div>
+                        <h3>Naraku 深层网络</h3>
+                        <p>奈落副服务器的实验性数据域，包含核心节点与环城环线，用于测试传输链路。</p>
+                        <div class="dataset-meta">
+                            <span>坐标精度：场景推算</span>
+                            <span>状态：Beta</span>
+                        </div>
+                    </article>
+                    <article class="dataset-card" data-source="houtu">
+                        <div class="dataset-card-header">
+                            <span class="badge badge-blue">后土 Houtu</span>
+                            <div class="dataset-count-wrapper">
+                                <span class="dataset-count"><span data-count-type="landmark" data-count-server="houtu">--</span> 个地标</span>
+                                <span class="dataset-count secondary">站点 <span data-count-type="railway" data-count-server="houtu">--</span></span>
+                            </div>
+                        </div>
+                        <h3>后土洲共鸣地标</h3>
+                        <p>按六大区域划分的共鸣地标与铁路局数据，扩展统一命名映射。</p>
+                        <div class="dataset-meta">
+                            <span>坐标精度：导航图</span>
+                            <span>更新频率：7 天</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="card table-card" id="landmarkExplorer">
+                <div class="section-header">
+                    <div>
+                        <p class="eyebrow">Landmark Explorer</p>
+                        <h2>地标检索</h2>
+                    </div>
+                    <button id="refreshButton" class="btn tertiary">刷新数据</button>
+                </div>
+                <div class="control-row">
+                    <label class="control-group">
+                        <span>服务器</span>
+                        <select id="landmarkServerSelect" data-server-control>
+                            <option value="zth">ZTH 零洲</option>
+                            <option value="naraku">Naraku 奈落</option>
+                            <option value="houtu">Houtu 后土</option>
+                        </select>
+                    </label>
+                    <label class="control-group grow">
+                        <span>名称筛选</span>
+                        <input type="text" id="searchInput" placeholder="输入地标名称，支持模糊匹配">
+                    </label>
+                </div>
+                <div class="results-meta">
+                    <span id="resultsCount">0 条记录</span>
+                    <span id="filterStatus">筛选条件：无</span>
+                </div>
+                <div class="table-container">
+                    <table id="landmarksTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>名称</th>
+                                <th>等级</th>
+                                <th>状态</th>
+                                <th>坐标 (X, Y, Z)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be loaded here by JavaScript -->
+                        </tbody>
+                    </table>
+                    <div class="empty-state" id="emptyState" hidden>
+                        <p>暂无符合条件的地标。</p>
+                        <p class="hint">尝试调整搜索条件或切换数据源。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card railway-card" id="railwayExplorer">
+                <div class="section-header">
+                    <div>
+                        <p class="eyebrow">Railway Network</p>
+                        <h2>铁路网系统</h2>
+                    </div>
+                    <span class="badge badge-outline">Beta</span>
+                </div>
+                <p class="section-description">
+                    所有站点遵循统一的 <code>stationName</code> + <code>lines[]</code> 结构，每条线路记录所属局（bureau）、线路编号、站编码与坐标。
+                </p>
+                <div class="control-row">
+                    <label class="control-group">
+                        <span>服务器</span>
+                        <select id="railwayServerSelect" data-server-control>
+                            <option value="zth">ZTH 零洲</option>
+                            <option value="naraku">Naraku 奈落</option>
+                            <option value="houtu">Houtu 后土</option>
+                        </select>
+                    </label>
+                    <label class="control-group grow">
+                        <span>站点搜索</span>
+                        <input type="text" id="railwaySearchInput" placeholder="输入站点名称或线路编号">
+                    </label>
+                </div>
+                <div class="results-meta">
+                    <span id="railwayResultsCount">0 个站点</span>
+                    <span id="railwayFilterStatus">筛选条件：无</span>
+                </div>
+                <div class="railway-list" id="railwayList"></div>
+                <div class="empty-state" id="railwayEmptyState" hidden>
+                    <p>暂无符合条件的铁路网数据。</p>
+                    <p class="hint">尝试切换服务器或调整搜索关键词。</p>
+                </div>
+            </section>
+        </section>
+
+        <aside class="right-column">
+            <section class="card api-card" id="api">
+                <h2>API 速览</h2>
+                <p>所有接口均返回 JSON，默认支持跨域访问，可直接被前端或脚本调用。</p>
+                <ul class="endpoint-list">
+                    <li>
+                        <div>
+                            <span class="method get">GET</span>
+                            <code>/api/landmarks?server=zth</code>
+                        </div>
+                        <p>获取指定数据源的全部地标，可用 <code>name</code> 参数模糊查询。</p>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="method get">GET</span>
+                            <code>/api/landmarks/&lt;id&gt;</code>
+                        </div>
+                        <p>根据地标 ID 返回完整信息，需同时传入 <code>server</code>。</p>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="method get">GET</span>
+                            <code>/api/railways?server=zth</code>
+                        </div>
+                        <p>返回指定服务器的铁路网站点，支持 <code>name</code> 关键词过滤线路或站名。</p>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="method get">GET</span>
+                            <code>/api/wiki_search?query=...</code>
+                        </div>
+                        <p>聚合 RIA Wiki 搜索结果，返回标题、链接与摘要。</p>
+                    </li>
+                </ul>
+                <a class="btn tertiary block" href="https://github.com/RainC7/RIA_Data" target="_blank">GitHub 仓库</a>
+            </section>
+
+            <section class="card updates-card">
+                <h2>平台动态</h2>
+                <ul class="timeline">
+                    <li>
+                        <p class="timeline-date">v0.3.0</p>
+                        <p>支持零洲与后土地标数据切换并开放 wiki 搜索 API。</p>
+                    </li>
+                    <li>
+                        <p class="timeline-date">Roadmap</p>
+                        <p>即将推出数据集订阅、上传审核与可视化仪表板。</p>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container footer-content">
+            <p>莉亚统一数据开放共享平台 · 数据每周更新 · 欢迎贡献新的数据域</p>
+            <a href="mailto:data@ria.red">data@ria.red</a>
         </div>
-    </div>
+    </footer>
     <script src="/static/js/main.js"></script>
 </body>
 </html>

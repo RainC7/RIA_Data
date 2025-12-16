@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 未发布
+
+### Added
+
+-   新增 `/api/railways`，提供按服务器划分的铁路网系统数据。
+-   统一 `server` 查询参数（兼容旧 `source`），支持 `zth`、`naraku`、`houtu` 三个服务器。
+-   前端首页升级为“莉亚统一数据开放共享平台”，新增铁路网展示模块。
+
+### Changed
+
+-   `data/landmark/` 与新建的 `data/railway/` 目录根据服务器读取数据，地标 ID 支持字符串。
+
 ## 0.3.0 - 2025-07-08
 
 ### Added
