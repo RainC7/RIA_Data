@@ -1,4 +1,5 @@
 import json
+import re
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -7,6 +8,33 @@ import os
 WIKI_URL = "https://wiki.ria.red/wiki/%E6%A8%A1%E6%9D%BF:Eden%E5%85%B1%E9%B8%A3%E5%9C%B0%E6%A0%87"
 # 坐标数据源URL
 COORDINATES_URL = "https://satellite.ria.red/map/_eden/tiles/_markers_/marker_world.json"
+
+# Wiki 名称到卫星数据名称的映射
+NAME_MAPPING = {
+    "抹岚 (Fst)": "抹岚",
+}
+
+def normalize_name(name):
+    """去掉名称中的括号后缀，用于模糊匹配"""
+    return re.sub(r'\s*\([^)]*\)\s*$', '', name).strip()
+
+def find_coordinates(name, coordinates_map):
+    """查找坐标，支持名称映射和模糊匹配"""
+    # 1. 先尝试直接匹配
+    if name in coordinates_map:
+        return coordinates_map[name]
+
+    # 2. 尝试名称映射
+    mapped_name = NAME_MAPPING.get(name)
+    if mapped_name and mapped_name in coordinates_map:
+        return coordinates_map[mapped_name]
+
+    # 3. 尝试去掉括号后缀匹配
+    normalized = normalize_name(name)
+    if normalized != name and normalized in coordinates_map:
+        return coordinates_map[normalized]
+
+    return {"x": "Unknown", "y": "Unknown", "z": "Unknown"}
 
 def parse_landmarks_to_json(wiki_url, coordinates_url):
     """
@@ -59,7 +87,7 @@ def parse_landmarks_to_json(wiki_url, coordinates_url):
                 status = "Removed"
 
             # 3. 匹配并添加坐标
-            coordinates = coordinates_map.get(name, {"x": "Unknown", "y": "Unknown", "z": "Unknown"})
+            coordinates = find_coordinates(name, coordinates_map)
 
             landmarks_data.append({
                 "id": landmark_id,
