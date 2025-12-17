@@ -19,9 +19,9 @@ def parse_landmarks_to_json(wiki_url, coordinates_url):
         coords_data = coords_response.json()
 
         coordinates_map = {}
-        # 提取 "共鸣地标" (Tori) 中的标记点信息
-        if 'sets' in coords_data and 'Tori' in coords_data['sets'] and 'markers' in coords_data['sets']['Tori']:
-            for marker_id, marker_info in coords_data['sets']['Tori']['markers'].items():
+        # 提取 "共鸣地标" 中的标记点信息
+        if 'sets' in coords_data and '共鸣地标' in coords_data['sets'] and 'markers' in coords_data['sets']['共鸣地标']:
+            for marker_id, marker_info in coords_data['sets']['共鸣地标']['markers'].items():
                 name = marker_info.get('label')
                 if name:
                     coordinates_map[name] = {
