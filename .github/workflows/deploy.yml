@@ -29,6 +29,7 @@ jobs:
         run: |
           python landmark/zth.py
           python landmark/houtu.py
+          python landmark/eden.py
 
       - name: Configure Git
         run: |
@@ -37,5 +38,5 @@ jobs:
 
       - name: Commit and push if data changed
         run: |
-          git add data/landmark/zth.json data/landmark/houtu.json
+          git add data/landmark/zth.json data/landmark/houtu.json data/landmark/eden.json
           git diff --staged --quiet || (git commit -m "Update landmark data" && git push)

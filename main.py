@@ -14,6 +14,7 @@ class Server(str, Enum):
     zth = "zth"
     naraku = "naraku"
     houtu = "houtu"
+    eden = "eden"
 
 
 DATA_DIRECTORIES = {
