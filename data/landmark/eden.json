@@ -5,9 +5,9 @@
         "grade": "白级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": 1913.0,
+            "y": 68.0,
+            "z": -1953.0
         }
     },
     {
@@ -16,9 +16,9 @@
         "grade": "白级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": -192.0,
+            "y": 80.0,
+            "z": -1472.0
         }
     },
     {
@@ -27,9 +27,9 @@
         "grade": "准级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": 1572.0,
+            "y": 97.0,
+            "z": -665.0
         }
     },
     {
@@ -38,9 +38,9 @@
         "grade": "准级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": 1573.0,
+            "y": 67.0,
+            "z": -1973.0
         }
     },
     {
@@ -49,9 +49,9 @@
         "grade": "白级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": -125.0,
+            "y": 70.0,
+            "z": 331.0
         }
     },
     {
@@ -60,9 +60,9 @@
         "grade": "准级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": 1555.0,
+            "y": 104.0,
+            "z": -106.0
         }
     },
     {
@@ -82,9 +82,9 @@
         "grade": "标级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": 714.0,
+            "y": 94.0,
+            "z": -273.0
         }
     },
     {
@@ -93,9 +93,9 @@
         "grade": "准级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": 1126.0,
+            "y": 65.0,
+            "z": 2336.0
         }
     },
     {
@@ -104,9 +104,9 @@
         "grade": "准级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": -1240.39,
+            "y": 64.0,
+            "z": 294.48
         }
     },
     {
@@ -115,9 +115,9 @@
         "grade": "标级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": -171.37,
+            "y": 89.0,
+            "z": 2092.5
         }
     },
     {
@@ -126,9 +126,9 @@
         "grade": "标级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": -2268.74,
+            "y": -58.5,
+            "z": 2436.57
         }
     },
     {
@@ -137,9 +137,9 @@
         "grade": "准级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": -341.5,
+            "y": 78.5,
+            "z": -3867.5
         }
     },
     {
@@ -159,9 +159,9 @@
         "grade": "准级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": 867.6,
+            "y": 64.0,
+            "z": 1373.19
         }
     },
     {
@@ -170,9 +170,9 @@
         "grade": "准级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": 420.47,
+            "y": 73.0,
+            "z": -1293.37
         }
     },
     {
@@ -181,9 +181,9 @@
         "grade": "标级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": -2110.73,
+            "y": 70.0,
+            "z": -1263.47
         }
     },
     {
@@ -192,9 +192,9 @@
         "grade": "白级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": -1258.49,
+            "y": 63.0,
+            "z": -847.63
         }
     },
     {
@@ -203,9 +203,9 @@
         "grade": "准级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": 787.51,
+            "y": 72.0,
+            "z": 3335.43
         }
     },
     {
@@ -214,9 +214,9 @@
         "grade": "标级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": 3766.51,
+            "y": 78.0,
+            "z": 1884.47
         }
     },
     {
@@ -225,9 +225,9 @@
         "grade": "准级",
         "status": "Normal",
         "coordinates": {
-            "x": "Unknown",
-            "y": "Unknown",
-            "z": "Unknown"
+            "x": 2858.54,
+            "y": 80.0,
+            "z": -222.52
         }
     }
 ]
