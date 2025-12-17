@@ -168,28 +168,28 @@
         "bureau": "H",
         "line": "101",
         "stationCode": 1,
-        "coord": { "x": 9440.0, "y": 8608.0, "z": 66.0 },
+        "coord": { "x": 9440.0, "y": 66.0, "z": 8608.0 },
         "distance": 0.0
       },
       {
         "bureau": "H",
         "line": "2",
         "stationCode": 4,
-        "coord": { "x": 9440.0, "y": 8608.0, "z": 66.0 },
+        "coord": { "x": 9440.0, "y": 66.0, "z": 8608.0 },
         "distance": 496.5
       },
       {
         "bureau": "H",
         "line": "201",
         "stationCode": 2,
-        "coord": { "x": 9440.0, "y": 8608.0, "z": 66.0 },
+        "coord": { "x": 9440.0, "y": 66.0, "z": 8608.0 },
         "distance": 504.5
       },
       {
         "bureau": "H",
         "line": "4",
         "stationCode": 6,
-        "coord": { "x": 9440.0, "y": 8599.5, "z": 66.0 },
+        "coord": { "x": 9440.0, "y": 66.0, "z": 8599.5 },
         "distance": 404.0
       }
     ],
