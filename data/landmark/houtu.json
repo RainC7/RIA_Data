@@ -44,6 +44,17 @@
         }
     },
     {
+        "id": "C-05",
+        "name": "蔦屋",
+        "grade": "白级",
+        "status": "Normal",
+        "coordinates": {
+            "x": "Unknown",
+            "y": "Unknown",
+            "z": "Unknown"
+        }
+    },
+    {
         "id": "N-01",
         "name": "海峭",
         "grade": "白级",

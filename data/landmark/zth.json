@@ -3089,5 +3089,16 @@
             "y": 64.0,
             "z": -15316.0
         }
+    },
+    {
+        "id": 282,
+        "name": "海华星湖国际机场",
+        "grade": "标级",
+        "status": "Normal",
+        "coordinates": {
+            "x": "Unknown",
+            "y": "Unknown",
+            "z": "Unknown"
+        }
     }
 ]
